@@ -23,6 +23,10 @@ After building the project, you can run the program by clicking on the "Run" but
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## Issues
+
+If you find any issues with the project, please open an issue in the repository. [Click here to open an issue](entropy-calculator/issues)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
