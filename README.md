@@ -25,7 +25,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## Issues
 
-If you find any issues with the project, please open an issue in the repository. [Click here to open an issue](entropy-calculator/issues)
+If you find any issues with the project, please open an issue in the repository. [Click here to open an issue](issues)
 
 ## License
 
