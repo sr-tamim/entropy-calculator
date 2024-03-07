@@ -1,13 +1,13 @@
 #include <iostream>
 #include <vector>
 #include "headers/allElements.h"
-#include "headers/genericElement.h"
+#include "headers/baseElement.h"
 
 using namespace std;
 
 int main()
 {
-    vector<genericElement*> elements = getAllElements();
+    vector<baseElement*> elements = getAllElements();
     cout << "Choose an element: " << endl;
     for (int i = 0; i < elements.size(); i++)
     {
@@ -25,6 +25,8 @@ int main()
     cin >> fromTemp;
     cout << "Enter the final temperature of the element (in K): ";
     cin >> toTemp;
+
+    cout << "The total heat needed is: " << elements[choice - 1]->totalHeatNeeded(mass, fromTemp, toTemp) << " J" << endl;
 
     cout << "The total entropy change is: " << elements[choice - 1]->totalEntropyChange(mass, fromTemp, toTemp) << " J/K" << endl;
 }

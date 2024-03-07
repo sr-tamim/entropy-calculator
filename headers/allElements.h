@@ -5,8 +5,8 @@
 #define ALL_ELEMENTS
 
 #include<vector>
-#include "genericElement.h"
+#include "baseElement.h"
 
-std::vector<genericElement*> getAllElements();
+std::vector<baseElement*> getAllElements();
 
 #endif

@@ -1,11 +1,11 @@
 #include<vector>
 #include "../elements/water.h"
-#include "genericElement.h"
+#include "baseElement.h"
 
 
-vector<genericElement*> getAllElements()
+vector<baseElement*> getAllElements()
 {
-    vector<genericElement*> elements;
+    vector<baseElement*> elements;
     elements.push_back(new water());
     return elements;
 }

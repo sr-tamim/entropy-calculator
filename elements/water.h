@@ -1,9 +1,9 @@
 #ifndef WATER_HPP_INCLUDED
 #define WATER_HPP_INCLUDED
 
-#include "../headers/genericElement.h"
+#include "../headers/baseElement.h"
 
-class water : public genericElement
+class water : public baseElement
 {
 public:
     water()

@@ -35,7 +35,7 @@
 		<Unit filename="elements/water.h" />
 		<Unit filename="headers/allElements.cpp" />
 		<Unit filename="headers/allElements.h" />
-		<Unit filename="headers/genericElement.h" />
+		<Unit filename="headers/baseElement.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
