@@ -23,6 +23,44 @@ After building the project, you can run the program by clicking on the "Run" but
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+### How to add a new element
+
+1. Create a new file in the `elements/` directory with the name of the element (e.g. `water.h` for water element)
+2. Define the element in the file. Declare a class with the name of the element which inherits from the `baseElement` class.
+3. Write constructor and set the values of the properties of the element.
+```cpp
+// Example: water.h
+#ifndef WATER_HPP_INCLUDED
+#define WATER_HPP_INCLUDED
+#include "../headers/baseElement.h"
+
+class water : public baseElement
+{
+public:
+    water()
+    {
+        setElementName("Water");
+        setSpecificHeatLiquid(4184);
+        setSpecificHeatSolid(2093);
+        setSpecificHeatGas(2010);
+        setLatentHeatOfFusion(334000);
+        setLatentHeatOfVaporization(2260000);
+        setMeltingPoint(273);
+        setBoilingPoint(373);
+    }
+};
+#endif // WATER_HPP_INCLUDED
+```
+4. Include the header file in the `allElements.cpp` file located in the `headers/` directory.
+```cpp
+// include new element's header file
+#include "../elements/water.h"
+
+// inside getElements() function, add the new element
+// push the new element to the elements vector
+elements.push_back(new water());
+```
+
 ## Issues
 
 If you find any issues with the project, please open an issue in the repository. [Click here to open an issue](https://github.com/sr-tamim/entropy-calculator/issues)
