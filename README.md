@@ -60,7 +60,7 @@ After building the project, you can run the program by clicking on the "Run" but
 }
 ```
 
-5. Press `F5` again to build and run the project.
+And finally press `F5` again to build and run the project.
 
 ## Contributing
 
