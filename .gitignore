@@ -38,3 +38,9 @@
 # Debug files
 bin/
 obj/
+
+# executable files
+main
+
+# VsCode
+.vscode/
