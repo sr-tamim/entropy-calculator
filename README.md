@@ -30,3 +30,9 @@ If you find any issues with the project, please open an issue in the repository.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Author
+
+[SR Tamim](https://sr-tamim.vercel.app)
+
+[![sr-tamim's Profilator](https://profilator.deno.dev/sr-tamim?v=1.0.0.alpha.4)](https://github.com/sr-tamim)
