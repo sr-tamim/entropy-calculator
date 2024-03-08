@@ -35,6 +35,8 @@
 		<Unit filename="elements/water.h" />
 		<Unit filename="headers/allElements.cpp" />
 		<Unit filename="headers/allElements.h" />
+		<Unit filename="headers/readElementState.cpp" />
+		<Unit filename="headers/readElementState.h" />
 		<Unit filename="headers/baseElement.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

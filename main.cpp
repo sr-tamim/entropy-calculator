@@ -21,12 +21,24 @@ int main()
     double mass, fromTemp, toTemp;
     cout << "Enter the mass of the element (in Kg): ";
     cin >> mass;
+    if (mass <= 0)
+    {
+        cout << "Mass must be a positive value" << endl;
+        return 0;
+    }
     cout << "Enter the initial temperature of the element (in K): ";
     cin >> fromTemp;
     cout << "Enter the final temperature of the element (in K): ";
     cin >> toTemp;
+    if (fromTemp > toTemp)
+    {
+        cout << "Initial temperature can not be greater than final temperature" << endl;
+        return 0;
+    }
 
-    cout << "The total heat needed is: " << elements[choice - 1]->totalHeatNeeded(mass, fromTemp, toTemp) << " J" << endl;
-
-    cout << "The total entropy change is: " << elements[choice - 1]->totalEntropyChange(mass, fromTemp, toTemp) << " J/K" << endl;
+    double totalHeat = elements[choice - 1]->totalHeatNeeded(mass, fromTemp, toTemp);
+    double totalEntropy = elements[choice - 1]->totalEntropyChange(mass, fromTemp, toTemp);
+    cout << "The total heat needed is: " << totalHeat << " J" << endl;
+    cout << "The total entropy change is: " << totalEntropy << " J/K" << endl;
+    return 0;
 }
