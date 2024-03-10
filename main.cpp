@@ -41,4 +41,7 @@ int main()
     cout << "The total heat needed is: " << totalHeat << " J" << endl;
     cout << "The total entropy change is: " << totalEntropy << " J/K" << endl;
     return 0;
+
+    //thank you.. feel free to contribute here..:)
+    
 }
