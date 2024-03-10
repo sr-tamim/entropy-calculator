@@ -63,32 +63,32 @@ public:
         if (toTemp <= meltingPoint)
         {
             totalHeat += mass * specificHeatSolid * (toTemp - fromTemp);
-            if (toTemp == meltingPoint && initialState != finalState)
+            if (toTemp == meltingPoint && finalState != "Solid")
                 totalHeat += mass * latentHeatOfFusion;
         }
         else if (toTemp <= boilingPoint)
         {
             if (fromTemp < meltingPoint)
                 totalHeat += mass * specificHeatSolid * (meltingPoint - fromTemp);
-            if (fromTemp == meltingPoint && initialState != finalState)
+            if (fromTemp == meltingPoint && initialState != "Liquid")
                 totalHeat += mass * latentHeatOfFusion;
             if (fromTemp <= meltingPoint)
                 totalHeat += mass * specificHeatLiquid * (toTemp - meltingPoint);
             else
                 totalHeat += mass * specificHeatLiquid * (toTemp - fromTemp);
-            if (toTemp == boilingPoint && initialState != finalState)
+            if (toTemp == boilingPoint && finalState != "Liquid")
                 totalHeat += mass * latentHeatOfVaporization;
         }
         else
         {
             if (fromTemp < meltingPoint)
                 totalHeat += mass * specificHeatSolid * (meltingPoint - fromTemp);
-            if (fromTemp == meltingPoint && initialState != finalState)
+            if (fromTemp == meltingPoint && initialState != "Liquid")
                 totalHeat += mass * latentHeatOfFusion;
 
             if (fromTemp < boilingPoint)
                 totalHeat += mass * specificHeatLiquid * (fromTemp - meltingPoint);
-            if (fromTemp == boilingPoint && initialState != finalState)
+            if (fromTemp == boilingPoint && initialState != "Gas")
                 totalHeat += mass * latentHeatOfVaporization;
 
             if (fromTemp > boilingPoint)
