@@ -125,5 +125,4 @@ If you find any issues with the project, please open an issue in the repository.
 ## Contributors
 
 [![SharafatKarim's Profilator](https://profilator.deno.dev/SharafatKarim?v=1.0.0.alpha.4)](https://github.com/SharafatKarim)
-
 [![NAYEMA26's Profilator](https://profilator.deno.dev/NAYEMA26?v=1.0.0.alpha.4)](https://github.com/NAYEMA26)
