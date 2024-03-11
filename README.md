@@ -40,6 +40,7 @@ After building the project, you can run the program by clicking on the "Run" but
                 "-g",
                 "${file}",
                 "./headers/allElements.cpp", // Add this line
+                "./headers/readElementState.cpp", // Add this line
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
