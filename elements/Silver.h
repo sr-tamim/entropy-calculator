@@ -10,18 +10,17 @@ public:
     {
         setElementName("Silver");
         
-        setSpecificHeatLiquid(0.24); // J/g°C
-        setSpecificHeatSolid(0.24); // J/g°C
+        setSpecificHeatLiquid(240); // J/kg.K
+        setSpecificHeatSolid(240); // J/kg.K
         
         // No specific heat capacity for gas
         
-        setLatentHeatOfFusion(11.3); // kJ/mol
-        setLatentHeatOfVaporization(250); // kJ/mol
+        setLatentHeatOfFusion(104.72); // J/kg
+        setLatentHeatOfVaporization(2318.83); //J/kg
         
-        setMeltingPoint(1234.8); // °C
-        setBoilingPoint(2485); // °C
+        setMeltingPoint(1234.8); // k
+        setBoilingPoint(2485); // k
     }
-    ~Silver();
 };
 
 #endif // SILVER_HPP_INCLUDED
