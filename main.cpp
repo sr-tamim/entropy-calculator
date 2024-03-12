@@ -1,7 +1,7 @@
+#define _USE_GMP
 #include <iostream>
 #include <vector>
-#include "headers/allElements.h"
-#include "headers/baseElement.h"
+#include "allElements.h"
 
 using namespace std;
 
@@ -33,8 +33,8 @@ int main()
 		return 0;
 	}
 
-	double totalHeat = elements[choice - 1]->totalHeatNeeded(mass, fromTemp, toTemp);
-	double totalEntropy = elements[choice - 1]->totalEntropyChange(mass, fromTemp, toTemp);
+	double totalHeat = bigfloat_unwrap(elements[choice - 1]->totalHeatNeeded(mass, fromTemp, toTemp));
+	double totalEntropy = bigfloat_unwrap(elements[choice - 1]->totalEntropyChange(mass, fromTemp, toTemp));
 	cout << "The total heat needed is: " << totalHeat << " J" << endl;
 	cout << "The total entropy change is: " << totalEntropy << " J/K" << endl;
 	return 0;
