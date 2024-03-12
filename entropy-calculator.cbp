@@ -31,16 +31,24 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="headers" />
 		</Compiler>
+		<Linker>
+			<Add library="gmp" />
+			<Add library="gmpxx" />
+		</Linker>
 		<Unit filename="elements/water.h" />
 		<Unit filename="headers/allElements.cpp" />
 		<Unit filename="headers/allElements.h" />
+		<Unit filename="headers/baseElement.h" />
 		<Unit filename="headers/readElementState.cpp" />
 		<Unit filename="headers/readElementState.h" />
-		<Unit filename="headers/baseElement.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
-			<lib_finder disable_auto="1" />
+			<lib_finder disable_auto="1">
+				<lib name="gmp" />
+				<lib name="gmpxx" />
+			</lib_finder>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
