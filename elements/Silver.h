@@ -16,12 +16,11 @@ public:
         // No specific heat capacity for gas
         
         setLatentHeatOfFusion(104.72); // J/kg
-        setLatentHeatOfVaporization( 2318.83); //J/kg
+        setLatentHeatOfVaporization(2318.83); //J/kg
         
         setMeltingPoint(1234.8); // k
         setBoilingPoint(2485); // k
     }
-    ~Silver();
 };
 
 #endif // SILVER_HPP_INCLUDED
