@@ -1,4 +1,3 @@
-#define _USE_GMP
 #include <iostream>
 #include <vector>
 #include "allElements.h"
