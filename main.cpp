@@ -1,4 +1,3 @@
-#define _USE_GMP
 #include <iostream>
 #include <vector>
 #include "allElements.h"
@@ -9,7 +8,7 @@ int main()
 {
 	vector<baseElement*> elements = getAllElements();
 	cout << "Choose an element: " << endl;
-	for (auto i = 0UL; i < elements.size(); i++) {
+	for (int i = 0; i < elements.size(); i++) {
 		cout << i + 1 << ". " << elements[i]->getElementName() << endl;
 	}
 	int choice;
@@ -33,8 +32,8 @@ int main()
 		return 0;
 	}
 
-	double totalHeat = bigfloat_unwrap(elements[choice - 1]->totalHeatNeeded(mass, fromTemp, toTemp));
-	double totalEntropy = bigfloat_unwrap(elements[choice - 1]->totalEntropyChange(mass, fromTemp, toTemp));
+	double totalHeat = elements[choice - 1]->totalHeatNeeded(mass, fromTemp, toTemp);
+	double totalEntropy = elements[choice - 1]->totalEntropyChange(mass, fromTemp, toTemp);
 	cout << "The total heat needed is: " << totalHeat << " J" << endl;
 	cout << "The total entropy change is: " << totalEntropy << " J/K" << endl;
 	return 0;
