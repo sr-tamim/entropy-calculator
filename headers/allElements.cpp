@@ -1,12 +1,13 @@
-#include<vector>
+#include <vector>
+#include <memory>
 #include "elements/water.h"
 #include "elements/Silver.h"
 #include "baseElement.h"
 
-vector<baseElement*> getAllElements()
+vector<unique_ptr<baseElement>> getAllElements()
 {
-	vector<baseElement*> elements;
-	elements.push_back(new water());
-	elements.push_back(new Silver());
+	vector<unique_ptr<baseElement>> elements;
+	elements.push_back(make_unique<water>());
+	elements.push_back(make_unique<Silver>());
 	return elements;
 }
