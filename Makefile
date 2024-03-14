@@ -17,7 +17,7 @@ SRC_DIR = .
 SRCS := $(sort $(shell find $(SRC_DIR) -name '*.cpp'))
 
 # Includes
-INCLUDE_DIR = include
+INCLUDE_DIR = elements
 INCLUDES := -I$(INCLUDE_DIR)
 
 # C preprocessor settings
