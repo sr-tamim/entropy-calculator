@@ -12,7 +12,7 @@ public:
         
         setSpecificHeatLiquid(919); // J/kg.K
         setSpecificHeatSolid(918); // J/kg.K
-        setSpecificHeatGaseous(918); // J.kg.K
+        setSpecificHeatGas(918); // J.kg.K
         
         setLatentHeatOfFusion(13100); // J/mol
         setLatentHeatOfVaporization(213000); // J/mol
