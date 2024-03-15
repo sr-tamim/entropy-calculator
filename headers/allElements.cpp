@@ -3,7 +3,8 @@
 #include "../elements/Silver.h"
 #include "../elements/Diamond.h"
 #include "../elements/Suger.h"
-
+#include "../elements/Oxygen.h"
+#include "../elements/Gold.h"
 #include "baseElement.h"
 
 
@@ -14,6 +15,8 @@ vector<baseElement*> getAllElements()
     elements.push_back(new Silver());
     elements.push_back(new Diamond());
     elements.push_back(new Suger());
+    elements.push_back(new Oxygen());
+    elements.push_back(new Gold());
     
     return elements;
 }

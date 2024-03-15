@@ -3,32 +3,20 @@
 
 #include <iostream>
 #include <math.h>
-#ifdef _USE_GMP
-#   include <gmp.h>
-#   include <gmpxx.h>
-#endif // _USE_GMP
 #include "readElementState.h"
 using namespace std;
-
-#ifdef _USE_GMP
-    typedef mpf_class bigfloat;
-#   define bigfloat_unwrap(X) (bigfloat(X)).get_d()
-#else
-    typedef double bigfloat;
-#   define bigfloat_unwrap(X) (X)
-#endif // _USE_GMP
 
 class baseElement
 {
 private:
     string elementName;
-    bigfloat latentHeatOfFusion;
-    bigfloat latentHeatOfVaporization;
-    bigfloat specificHeatSolid;
-    bigfloat specificHeatLiquid;
-    bigfloat specificHeatGas;
-    bigfloat meltingPoint;
-    bigfloat boilingPoint;
+    double latentHeatOfFusion;
+    double latentHeatOfVaporization;
+    double specificHeatSolid;
+    double specificHeatLiquid;
+    double specificHeatGas;
+    double meltingPoint;
+    double boilingPoint;
     string initialState = "";
     string finalState = "";
 
@@ -44,15 +32,15 @@ protected:
 
 public:
     string getElementName() { return elementName; }
-    bigfloat getLatentHeatOfFusion() { return latentHeatOfFusion; }
-    bigfloat getLatentHeatOfVaporization() { return latentHeatOfVaporization; }
-    bigfloat getSpecificHeatSolid() { return specificHeatSolid; }
-    bigfloat getSpecificHeatLiquid() { return specificHeatLiquid; }
-    bigfloat getSpecificHeatGas() { return specificHeatGas; }
-    bigfloat getMeltingPoint() { return meltingPoint; }
-    bigfloat getBoilingPoint() { return boilingPoint; }
+    double getLatentHeatOfFusion() { return latentHeatOfFusion; }
+    double getLatentHeatOfVaporization() { return latentHeatOfVaporization; }
+    double getSpecificHeatSolid() { return specificHeatSolid; }
+    double getSpecificHeatLiquid() { return specificHeatLiquid; }
+    double getSpecificHeatGas() { return specificHeatGas; }
+    double getMeltingPoint() { return meltingPoint; }
+    double getBoilingPoint() { return boilingPoint; }
 
-    bigfloat totalHeatNeeded(double mass, double fromTemp, double toTemp)
+    double totalHeatNeeded(double mass, double fromTemp, double toTemp)
     {
         if (fromTemp < 0 || toTemp < 0)
         {
@@ -60,7 +48,7 @@ public:
             return 0;
         }
 
-        bigfloat totalHeat = 0;
+        double totalHeat = 0;
         if (fromTemp == meltingPoint || fromTemp == boilingPoint)
         {
             cout << "What is the state of the element at the initial temperature?" << endl;
@@ -111,7 +99,7 @@ public:
         return totalHeat;
     }
 
-    bigfloat totalEntropyChange(double mass, double fromTemp, double toTemp)
+    double totalEntropyChange(double mass, double fromTemp, double toTemp)
     {
         if (fromTemp < 0 || toTemp < 0)
         {
@@ -119,7 +107,7 @@ public:
             return 0;
         }
 
-        bigfloat totalEntropy = 0;
+        double totalEntropy = 0;
         if (fromTemp == meltingPoint || fromTemp == boilingPoint)
         {
             cout << "What is the state of the element at the initial temperature?" << endl;
@@ -135,39 +123,39 @@ public:
 
         if (toTemp <= meltingPoint)
         {
-            totalEntropy += mass * specificHeatSolid * log(bigfloat_unwrap(toTemp / fromTemp));
+            totalEntropy += mass * specificHeatSolid * log(toTemp / fromTemp);
             if (toTemp == meltingPoint && finalState != "Solid")
                 totalEntropy += mass * latentHeatOfFusion / meltingPoint;
         }
         else if (toTemp <= boilingPoint)
         {
             if (fromTemp < meltingPoint)
-                totalEntropy += mass * specificHeatSolid * log(bigfloat_unwrap(meltingPoint / fromTemp));
+                totalEntropy += mass * specificHeatSolid * log(meltingPoint / fromTemp);
             if (fromTemp == meltingPoint && initialState != "Liquid")
                 totalEntropy += mass * latentHeatOfFusion / meltingPoint;
             if (fromTemp <= meltingPoint)
-                totalEntropy += mass * specificHeatLiquid * log(bigfloat_unwrap(toTemp / meltingPoint));
+                totalEntropy += mass * specificHeatLiquid * log(toTemp / meltingPoint);
             else
-                totalEntropy += mass * specificHeatLiquid * log(bigfloat_unwrap(toTemp / fromTemp));
+                totalEntropy += mass * specificHeatLiquid * log(toTemp / fromTemp);
             if (toTemp == boilingPoint && finalState != "Liquid")
                 totalEntropy += mass * latentHeatOfVaporization / boilingPoint;
         }
         else
         {
             if (fromTemp < meltingPoint)
-                totalEntropy += mass * specificHeatSolid * log(bigfloat_unwrap(meltingPoint / fromTemp));
+                totalEntropy += mass * specificHeatSolid * log(meltingPoint / fromTemp);
             if (fromTemp == meltingPoint && initialState != "Liquid")
                 totalEntropy += mass * latentHeatOfFusion / meltingPoint;
 
             if (fromTemp < boilingPoint)
-                totalEntropy += mass * specificHeatLiquid * log(bigfloat_unwrap(fromTemp / meltingPoint));
+                totalEntropy += mass * specificHeatLiquid * log(fromTemp / meltingPoint);
             if (fromTemp == boilingPoint && initialState != "Gas")
                 totalEntropy += mass * latentHeatOfVaporization / boilingPoint;
 
             if (fromTemp > boilingPoint)
-                totalEntropy += mass * specificHeatGas * log(bigfloat_unwrap(toTemp / fromTemp));
+                totalEntropy += mass * specificHeatGas * log(toTemp / fromTemp);
             else
-                totalEntropy += mass * specificHeatGas * log(bigfloat_unwrap(toTemp / boilingPoint));
+                totalEntropy += mass * specificHeatGas * log(toTemp / boilingPoint);
         }
         return totalEntropy;
     }
