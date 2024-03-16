@@ -47,7 +47,6 @@ endif
 
 <<sources>> := \
 	main.cpp \
-	headers/allElements.cpp \
 	headers/readElementState.cpp
 
 
