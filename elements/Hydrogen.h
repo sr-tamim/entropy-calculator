@@ -20,7 +20,6 @@ public:
         setMeltingPoint(14.01); // K
         setBoilingPoint(20.28); // K
     }
-    ~Hydrogen();
 };
 
 #endif // HYDROGEN_HPP_INCLUDED

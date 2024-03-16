@@ -24,7 +24,6 @@ public:
         setMeltingPoint(1074.15); // k
         setBoilingPoint(1738.15); // k
     }
-    ~Salt();
 };
 
 #endif // SALT_HPP_INCLUDED

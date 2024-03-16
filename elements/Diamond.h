@@ -24,7 +24,6 @@ public:
         setMeltingPoint(0); // Diamond sublimes at 3915 K
         setBoilingPoint(0); // Diamond sublimes before boiling
     }
-    ~Diamond();
 };
 
 #endif // DIAMOND_HPP_INCLUDED
