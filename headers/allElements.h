@@ -13,8 +13,9 @@
 #include "../elements/Oxygen.h"
 #include "../elements/Hydrogen.h"
 #include "../elements/Diamond.h"
-#include "../elements/Sugar.h"
 #include "../elements/Gold.h"
+#include "../elements/Sugar.h"
+#include "../elements/Salt.h"
 
 std::vector<std::unique_ptr<baseElement>> getAllElements()
 {
@@ -24,8 +25,9 @@ std::vector<std::unique_ptr<baseElement>> getAllElements()
     elements.push_back(std::make_unique<Oxygen>());
     elements.push_back(std::make_unique<Hydrogen>());
     elements.push_back(std::make_unique<Diamond>());
-    elements.push_back(std::make_unique<Sugar>());
     elements.push_back(std::make_unique<Gold>());
+    elements.push_back(std::make_unique<Sugar>());
+    elements.push_back(std::make_unique<Salt>());
 
     return elements;
 }
