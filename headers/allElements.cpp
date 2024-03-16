@@ -14,11 +14,11 @@ vector<unique_ptr<baseElement>> getAllElements()
 	vector<unique_ptr<baseElement>> elements;
 	elements.push_back(make_unique<water>());
 	elements.push_back(make_unique<Silver>());
-    elements.push_back(new Oxygen());
-    elements.push_back(new Hydrogen());
-    elements.push_back(new Diamond());
-    elements.push_back(new Sugar());
-    elements.push_back(new Gold());
+    elements.push_back(make_unique<Oxygen>());
+    elements.push_back(make_unique<Hydrogen>());
+    elements.push_back(make_unique<Diamond>());
+    elements.push_back(make_unique<Sugar>());
+    elements.push_back(make_unique<Gold>());
 
 	return elements;
 }
