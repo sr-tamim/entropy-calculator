@@ -46,8 +46,7 @@ ifneq ($(PKGS),)
 endif
 
 <<sources>> := \
-	main.cpp \
-	headers/readElementState.cpp
+	main.cpp
 
 
 <<objects>> := $(<<sources>>:%=obj/$(<<tdir>>)/%.o)
