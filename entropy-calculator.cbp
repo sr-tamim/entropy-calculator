@@ -34,10 +34,15 @@
 			<Add directory="headers" />
 		</Compiler>
 		<Unit filename="elements/water.h" />
-		<Unit filename="headers/allElements.cpp" />
+		<Unit filename="elements/Silver.h" />
+		<Unit filename="elements/Oxygen.h" />
+		<Unit filename="elements/Hydrogen.h" />
+		<Unit filename="elements/Diamond.h" />
+		<Unit filename="elements/Gold.h" />
+		<Unit filename="elements/Sugar.h" />
+		<Unit filename="elements/Salt.h" />
 		<Unit filename="headers/allElements.h" />
 		<Unit filename="headers/baseElement.h" />
-		<Unit filename="headers/readElementState.cpp" />
 		<Unit filename="headers/readElementState.h" />
 		<Unit filename="main.cpp" />
 	</Project>
