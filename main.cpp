@@ -1,12 +1,13 @@
 #include "headers/allElements.h"
 #include <iostream>
 #include <vector>
+#include <memory>
 
 using namespace std;
 
 int main()
 {
-	vector<baseElement *> elements = getAllElements();
+	vector<unique_ptr<baseElement>> elements = getAllElements();
 	cout << "Choose an element: " << endl;
 	for (int i = 0; i < int(elements.size()); i++)
 	{
