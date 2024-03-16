@@ -42,5 +42,8 @@ obj/
 # executable files
 main
 
+# build files
+build/
+
 # VsCode
 .vscode/
