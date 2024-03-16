@@ -40,6 +40,18 @@ public:
     double getMeltingPoint() { return meltingPoint; }
     double getBoilingPoint() { return boilingPoint; }
 
+    baseElement()
+    {
+        elementName = "Unknown Element";
+        latentHeatOfFusion = 0;
+        latentHeatOfVaporization = 0;
+        specificHeatSolid = 0;
+        specificHeatLiquid = 0;
+        specificHeatGas = 0;
+        meltingPoint = 0;
+        boilingPoint = 0;
+    }
+
     double totalHeatNeeded(double mass, double fromTemp, double toTemp)
     {
         if (fromTemp < 0 || toTemp < 0)
