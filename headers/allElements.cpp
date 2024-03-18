@@ -6,6 +6,7 @@
 #include "../elements/Diamond.h"
 #include "../elements/Sugar.h"
 #include "../elements/Gold.h"
+#include "../elements/Salt.h"
 #include "baseElement.h"
 
 
@@ -19,6 +20,7 @@ vector<baseElement*> getAllElements()
     elements.push_back(new Diamond());
     elements.push_back(new Sugar());
     elements.push_back(new Gold());
+    elements.push_back(new Salt));
 
     return elements;
 }
