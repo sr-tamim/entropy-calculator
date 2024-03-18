@@ -39,8 +39,6 @@ After building the project, you can run the program by clicking on the "Run" but
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                "./headers/allElements.cpp", // Add this line
-                "./headers/readElementState.cpp", // Add this line
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
