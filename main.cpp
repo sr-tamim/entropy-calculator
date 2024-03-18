@@ -9,7 +9,7 @@ int main()
 {
 	vector<unique_ptr<baseElement>> elements = getAllElements();
 	cout << "Choose an element: " << endl;
-	for (int i = 0; i < int(elements.size()); i++)
+	for (auto i = 0UL; i < elements.size(); i++)
 	{
 		cout << i + 1 << ". " << elements[i]->getElementName() << endl;
 	}
