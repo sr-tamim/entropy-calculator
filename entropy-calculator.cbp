@@ -41,6 +41,9 @@
 		<Unit filename="elements/Gold.h" />
 		<Unit filename="elements/Sugar.h" />
 		<Unit filename="elements/Salt.h" />
+		<Unit filename="elements/Copper.h" />
+		<Unit filename="elements/EthanoicAcid.h" />
+		<Unit filename="elements/Iron.h" />
 		<Unit filename="headers/allElements.h" />
 		<Unit filename="headers/baseElement.h" />
 		<Unit filename="headers/readElementState.h" />
