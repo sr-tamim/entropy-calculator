@@ -22,7 +22,6 @@ public:
         setMeltingPoint(366.8); // K
         setBoilingPoint(0); // Sugar decomposes before boiling
     }
-    ~Sugar();
 };
 
 #endif // SUGAR_HPP_INCLUDED

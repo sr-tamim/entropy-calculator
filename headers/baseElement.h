@@ -40,6 +40,32 @@ public:
     double getMeltingPoint() { return meltingPoint; }
     double getBoilingPoint() { return boilingPoint; }
 
+    baseElement()
+    {
+        elementName = "Unknown Element";
+        latentHeatOfFusion = 0;
+        latentHeatOfVaporization = 0;
+        specificHeatSolid = 0;
+        specificHeatLiquid = 0;
+        specificHeatGas = 0;
+        meltingPoint = 0;
+        boilingPoint = 0;
+    }
+
+    void askForState(double fromTemp, double toTemp)
+    {
+        if (initialState == "" && (fromTemp == meltingPoint || fromTemp == boilingPoint))
+        {
+            cout << "What is the state of the element at the initial temperature?" << endl;
+            initialState = readElementState();
+        }
+        if (finalState == "" && (toTemp == meltingPoint || toTemp == boilingPoint))
+        {
+            cout << "What is the state of the element at the final temperature?" << endl;
+            finalState = readElementState();
+        }
+    }
+
     double totalHeatNeeded(double mass, double fromTemp, double toTemp)
     {
         if (fromTemp < 0 || toTemp < 0)
@@ -49,16 +75,7 @@ public:
         }
 
         double totalHeat = 0;
-        if (fromTemp == meltingPoint || fromTemp == boilingPoint)
-        {
-            cout << "What is the state of the element at the initial temperature?" << endl;
-            initialState = readElementState();
-        }
-        if (toTemp == meltingPoint || toTemp == boilingPoint)
-        {
-            cout << "What is the state of the element at the final temperature?" << endl;
-            finalState = readElementState();
-        }
+        askForState(fromTemp, toTemp);
 
         if (toTemp <= meltingPoint)
         {
@@ -84,7 +101,7 @@ public:
         }
         else
         {
-            if (fromTemp < meltingPoint) 
+            if (fromTemp < meltingPoint)
             {
                 totalHeat += mass * specificHeatSolid * (meltingPoint - fromTemp);
                 totalHeat += mass * latentHeatOfFusion;
@@ -92,7 +109,7 @@ public:
             if (fromTemp == meltingPoint && initialState != "Liquid")
                 totalHeat += mass * latentHeatOfFusion;
 
-            if (fromTemp < boilingPoint) 
+            if (fromTemp < boilingPoint)
             {
                 if (fromTemp <= meltingPoint)
                     totalHeat += mass * specificHeatLiquid * (boilingPoint - meltingPoint);
@@ -120,18 +137,7 @@ public:
         }
 
         double totalEntropy = 0;
-        if (fromTemp == meltingPoint || fromTemp == boilingPoint)
-        {
-            cout << "What is the state of the element at the initial temperature?" << endl;
-            if (initialState != "")
-                initialState = readElementState();
-        }
-        if (toTemp == meltingPoint || toTemp == boilingPoint)
-        {
-            cout << "What is the state of the element at the final temperature?" << endl;
-            if (finalState != "")
-                finalState = readElementState();
-        }
+        askForState(fromTemp, toTemp);
 
         if (toTemp <= meltingPoint)
         {

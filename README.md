@@ -21,7 +21,7 @@ This is a C++ project that calculates the entropy change of different elements i
 
 After building the project, you can run the program by clicking on the "Run" button or selecting "Run" from the "Build" menu in Code::Blocks.
 
-### Visual Studio Code
+### Visual Studio Code (Linux)
 
 1. Open the project in Visual Studio Code.
 2. Press `F5` to build the project.
@@ -39,8 +39,6 @@ After building the project, you can run the program by clicking on the "Run" but
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                "./headers/allElements.cpp", // Add this line
-                "./headers/readElementState.cpp", // Add this line
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

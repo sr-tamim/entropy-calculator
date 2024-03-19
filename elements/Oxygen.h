@@ -20,7 +20,6 @@ public:
         setMeltingPoint(54.36); // k
         setBoilingPoint(90.19); // k
     }
-    ~Oxygen();
 };
 
 #endif // OXYGEN_HPP_INCLUDED
