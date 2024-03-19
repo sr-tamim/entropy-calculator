@@ -16,6 +16,9 @@
 #include "../elements/Gold.h"
 #include "../elements/Sugar.h"
 #include "../elements/Salt.h"
+#include "../elements/Copper.h"
+#include "../elements/EthanoicAcid.h"
+#include "../elements/Iron.h"
 
 std::vector<std::unique_ptr<baseElement>> getAllElements()
 {
@@ -28,6 +31,9 @@ std::vector<std::unique_ptr<baseElement>> getAllElements()
     elements.push_back(std::make_unique<Gold>());
     elements.push_back(std::make_unique<Sugar>());
     elements.push_back(std::make_unique<Salt>());
+    elements.push_back(std::make_unique<Copper>());
+    elements.push_back(std::make_unique<EthanoicAcid>());
+    elements.push_back(std::make_unique<Iron>());
 
     return elements;
 }
