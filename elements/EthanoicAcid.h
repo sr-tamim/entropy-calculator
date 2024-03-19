@@ -11,18 +11,15 @@ public:
         setElementName("Ethanoic Acid");
         
         setSpecificHeatLiquid(2400); // J/kg.K
-        setSpecificHeatSolid(2400);//J/kg.K (Approximately)
-        setSpecificHeatGas(1630);//J/kg.K (Approximately)
+        setSpecificHeatSolid(2400); // J/kg.K (Approximately)
+        setSpecificHeatGas(1630); // J/kg.K (Approximately)
         
         setLatentHeatOfFusion(120000); // J/kg (Approximately)
-        setLatentHeatOfVaporization(363000);  //J/kg (Approximately)
+        setLatentHeatOfVaporization(363000);  // J/kg (Approximately)
         
-        setMeltingPoint(290); //K (Approximately)
+        setMeltingPoint(290); // K (Approximately)
         setBoilingPoint(391); // K (Approximately)
-        
     }
-    
-    ~EthanoicAcid();
 };
 
 #endif // EthanoicAcid_HPP_INCLUDED
