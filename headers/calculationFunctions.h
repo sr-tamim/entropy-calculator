@@ -23,7 +23,7 @@ public:
         if (toTemp <= meltingPoint)
         {
             totalHeat += mass * specificHeatSolid * (toTemp - fromTemp);
-            if (toTemp == meltingPoint && finalState != "Solid")
+            if (toTemp == meltingPoint && initialState == "Solid" && finalState == "Liquid")
                 totalHeat += mass * latentHeatOfFusion;
         }
         else if (toTemp <= boilingPoint)
@@ -33,13 +33,13 @@ public:
                 totalHeat += mass * specificHeatSolid * (meltingPoint - fromTemp);
                 totalHeat += mass * latentHeatOfFusion;
             }
-            if (fromTemp == meltingPoint && initialState != "Liquid")
+            if (fromTemp == meltingPoint && initialState == "Solid" && finalState != "Solid")
                 totalHeat += mass * latentHeatOfFusion;
             if (fromTemp <= meltingPoint)
                 totalHeat += mass * specificHeatLiquid * (toTemp - meltingPoint);
             else
                 totalHeat += mass * specificHeatLiquid * (toTemp - fromTemp);
-            if (toTemp == boilingPoint && finalState != "Liquid")
+            if (toTemp == boilingPoint && initialState != "Gas" && finalState == "Gas")
                 totalHeat += mass * latentHeatOfVaporization;
         }
         else
@@ -49,7 +49,7 @@ public:
                 totalHeat += mass * specificHeatSolid * (meltingPoint - fromTemp);
                 totalHeat += mass * latentHeatOfFusion;
             }
-            if (fromTemp == meltingPoint && initialState != "Liquid")
+            if (fromTemp == meltingPoint && initialState == "Solid" && finalState != "Solid")
                 totalHeat += mass * latentHeatOfFusion;
 
             if (fromTemp < boilingPoint)
@@ -60,7 +60,7 @@ public:
                     totalHeat += mass * specificHeatLiquid * (boilingPoint - fromTemp);
                 totalHeat += mass * latentHeatOfVaporization;
             }
-            if (fromTemp == boilingPoint && initialState != "Gas")
+            if (fromTemp == boilingPoint && initialState != "Gas" && finalState == "Gas")
                 totalHeat += mass * latentHeatOfVaporization;
 
             if (fromTemp > boilingPoint)
@@ -85,7 +85,7 @@ public:
         if (toTemp <= meltingPoint)
         {
             totalEntropy += mass * specificHeatSolid * log(toTemp / fromTemp);
-            if (toTemp == meltingPoint && finalState != "Solid")
+            if (toTemp == meltingPoint && initialState == "Solid" && finalState == "Liquid")
                 totalEntropy += mass * latentHeatOfFusion / meltingPoint;
         }
         else if (toTemp <= boilingPoint)
@@ -95,13 +95,13 @@ public:
                 totalEntropy += mass * specificHeatSolid * log(meltingPoint / fromTemp);
                 totalEntropy += mass * latentHeatOfFusion / meltingPoint;
             }
-            if (fromTemp == meltingPoint && initialState != "Liquid")
+            if (fromTemp == meltingPoint && initialState == "Solid" && finalState != "Solid")
                 totalEntropy += mass * latentHeatOfFusion / meltingPoint;
             if (fromTemp <= meltingPoint)
                 totalEntropy += mass * specificHeatLiquid * log(toTemp / meltingPoint);
             else
                 totalEntropy += mass * specificHeatLiquid * log(toTemp / fromTemp);
-            if (toTemp == boilingPoint && finalState != "Liquid")
+            if (toTemp == boilingPoint && initialState != "Gas" && finalState == "Gas")
                 totalEntropy += mass * latentHeatOfVaporization / boilingPoint;
         }
         else
@@ -111,7 +111,7 @@ public:
                 totalEntropy += mass * specificHeatSolid * log(meltingPoint / fromTemp);
                 totalEntropy += mass * latentHeatOfFusion / meltingPoint;
             }
-            if (fromTemp == meltingPoint && initialState != "Liquid")
+            if (fromTemp == meltingPoint && initialState == "Solid" && finalState != "Solid")
                 totalEntropy += mass * latentHeatOfFusion / meltingPoint;
 
             if (fromTemp < boilingPoint)
@@ -122,7 +122,7 @@ public:
                     totalEntropy += mass * specificHeatLiquid * log(boilingPoint / fromTemp);
                 totalEntropy += mass * latentHeatOfVaporization / boilingPoint;
             }
-            if (fromTemp == boilingPoint && initialState != "Gas")
+            if (fromTemp == boilingPoint && initialState != "Gas" && finalState == "Gas")
                 totalEntropy += mass * latentHeatOfVaporization / boilingPoint;
 
             if (fromTemp > boilingPoint)
