@@ -33,20 +33,25 @@
 			<Add option="-fexceptions" />
 			<Add directory="headers" />
 		</Compiler>
-		<Unit filename="elements/water.h" />
-		<Unit filename="elements/Silver.h" />
-		<Unit filename="elements/Oxygen.h" />
-		<Unit filename="elements/Hydrogen.h" />
-		<Unit filename="elements/Diamond.h" />
-		<Unit filename="elements/Gold.h" />
-		<Unit filename="elements/Sugar.h" />
-		<Unit filename="elements/Salt.h" />
 		<Unit filename="elements/Copper.h" />
+		<Unit filename="elements/Diamond.h" />
 		<Unit filename="elements/EthanoicAcid.h" />
+		<Unit filename="elements/Gold.h" />
+		<Unit filename="elements/Hydrogen.h" />
 		<Unit filename="elements/Iron.h" />
+		<Unit filename="elements/Oxygen.h" />
+		<Unit filename="elements/Salt.h" />
+		<Unit filename="elements/Silver.h" />
+		<Unit filename="elements/Sugar.h" />
+		<Unit filename="elements/water.h" />
 		<Unit filename="headers/allElements.h" />
 		<Unit filename="headers/baseElement.h" />
-		<Unit filename="headers/readElementState.h" />
+		<Unit filename="headers/calculationFunctions.h" />
+		<Unit filename="headers/elementState.h" />
+		<Unit filename="headers/thermalProperties.h" />
 		<Unit filename="main.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
