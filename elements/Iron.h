@@ -21,8 +21,6 @@ public:
         setBoilingPoint(3134); // K
         
     }
-    
-    ~Iron();
 };
 
 #endif // Iron_HPP_INCLUDED
