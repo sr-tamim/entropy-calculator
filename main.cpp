@@ -16,8 +16,8 @@ int main()
 	int choice;
 	cout << "Write the number of the element: ";
 	cin >> choice;
-	cout << endl
-		 << elements[choice - 1]->getElementName() << " Selected" << endl;
+	cout << endl;
+	cout << elements[choice - 1]->getElementName() << " Selected" << endl;
 
 	double mass, fromTemp, toTemp;
 	cout << "Enter the mass of the element (in Kg): ";
@@ -33,8 +33,7 @@ int main()
 	cin >> toTemp;
 	if (fromTemp > toTemp)
 	{
-		cout << "Initial temperature can not be greater than final temperature"
-			 << endl;
+		cout << "Initial temperature can not be greater than final temperature" << endl;
 		return 0;
 	}
 
